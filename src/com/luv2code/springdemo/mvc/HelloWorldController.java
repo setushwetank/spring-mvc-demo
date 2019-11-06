@@ -22,6 +22,7 @@ public class HelloWorldController {
 	
 	@RequestMapping("/processForm")
 	public String processForm() {
+		System.out.println("Inside request mapping processForm");
 		return "helloworld";
 	}
 	
@@ -30,6 +31,7 @@ public class HelloWorldController {
 
 	@RequestMapping("/processFormVersionTwo")	
 	public String letsShoutDude(HttpServletRequest request, Model model) {
+		System.out.println("Inside method letsShoutDude");
 		
 		// read the request parameter from the HTML form
 		String theName = request.getParameter("studentName");
@@ -43,7 +45,7 @@ public class HelloWorldController {
 		// add message to the model
 		model.addAttribute("message", result);
 				
-		return "helloworld";
+		return "helloworld_v2";
 	}
 	
 	@RequestMapping("/processFormVersionThree")	
